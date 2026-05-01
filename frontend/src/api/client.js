@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:5000',
+  baseURL: 'https://nutrisense-yonc.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -15,7 +15,7 @@ export const analyzeMeal = async (foods) => {
     if (error.response) {
       throw error.response.data;
     }
-    throw { success: false, errors: ['Network error. Is the backend running?'] };
+    throw { success: false, errors: ['Network error. Backend may be sleeping or unreachable.'] };
   }
 };
 
